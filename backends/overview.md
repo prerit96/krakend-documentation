@@ -25,7 +25,7 @@ Inside the `backend` array, you need to create an object for each backend entry.
 - `sd`: When you use a [Service Discovery](/docs/service-discovery/overview/) system to resolve your backend services (e.g., when deploying in k8s)
 - `method`: One of `GET`, `POST`, `PUT`, `DELETE`, `PATCH` (in **uppercase**!). The method does not need to match the endpoint's method.
 - `url_pattern` The path inside the service (no protocol, no host, no method). E.g: `/users`
-- `host` an array with all the available hosts to load balance requests using the format `protocol://host:port`. E.g.: ' https://my.users-ms.com`.
+- `host` an array with all the available hosts to load balance requests using the format `protocol://host:port`. E.g.: ' https://my.users-ms.com`. Round Robin is the approach used for load balancing.
 - `extra_config` when there is additional configuration related to a specific component or middleware that you want to enable
 
 Other configuration options such as the ones for [data manipulation](/docs/backends/data-manipulation/) are available. You will find them in each specific feature section. 
